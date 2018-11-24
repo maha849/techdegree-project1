@@ -28,6 +28,10 @@ a:hover {
 
 /* Section Styles */
 
+.wrapper{
+  height: calc(100vh - 120px);
+}
+
 .main-nav {
   width: 100%;
   background: #f7f5f0;
@@ -89,10 +93,12 @@ header .profile-image:hover {
   transform: scale(1.2) rotate(5deg);
 }
 
+main{
+  height: 100%;
+}
+
 .o-page{
   padding-top: 100px;
-  margin-bottom: -220px;
-  min-height: 100%;
 }
 
 .o-page .card{
