@@ -1,3 +1,29 @@
+/**
+ * Fix fonts that render as bold in Firefox
+ *
+ * Put this near the top of your style.css
+ * Before any overriding styles
+ */
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+/**
+ * Firefox specific rule
+ */
+
+@-moz-document url-prefix() {
+  body {
+    font-weight: lighter !important;
+  }
+}
+
+
 /* Global Layout Set-up */
 * { 
   box-sizing: border-box;
@@ -13,8 +39,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #222;
   background: #f7f5f0;
-
+  font-weight: normal;
 }
+
 /* Link Styles */
 
 a {
@@ -57,9 +84,10 @@ a:hover {
 }
 .nav a {
   transition: all .5s;
+  color: #035a76;
 }
 .nav a:hover {
-  color: black;
+  color: #be0841;
 }
 
 header {
@@ -93,8 +121,9 @@ header .profile-image:hover {
 
 .o-page .card{
   max-width: 1200px;
-  margin: 0 auto 100px;
+  margin: 50px auto 100px;
   padding: 30px;
+  text-align: center;
 }
 
 .tag {
@@ -140,6 +169,10 @@ ul.skills {
 
 .skills li:nth-child(odd) {
   background: #0399ff;
+}
+
+.hobby p{
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -201,8 +234,7 @@ a.social:hover {
       -ms-flex-pack: distribute;
       justify-content: space-around;
       margin: 0 auto;
-      flex: 1;
-  }
+    }
 
   header {
     min-height: 600px;
